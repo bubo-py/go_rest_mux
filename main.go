@@ -66,7 +66,6 @@ func updateEmployee(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	json.NewEncoder(w).Encode(employees)
-}
 
 func deleteEmployee(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
@@ -85,9 +84,9 @@ func main() {
 	r := mux.NewRouter()
 
 	// Mock database initialization
-	employees = append(employees, Employee{ID: "1", Person: &Person{Firstname: "Vince", Lastname: "Reuter", Age: "23"}, Salary: "9090"})
-	employees = append(employees, Employee{ID: "2", Person: &Person{Firstname: "Karel", Lastname: "Bullivant", Age: "91"}, Salary: "2137"})
-	employees = append(employees, Employee{ID: "3", Person: &Person{Firstname: "Kain", Lastname: "McGeever", Age: "42"}, Salary: "9332"})
+	employees = append(employees, Employee{ID: "1", Person: &Person{Firstname: "Vince", Lastname: "Reuter", Age: "23"}, Salary:          "9090"})
+	employees = append(employees, Employee{ID: "2", Person: &Person{Firstname: "Karel", Lastname: "Bullivant", Age: "91"}, Salary:       "2137"})
+	employees = append(employees, Employee{ID: "3", Person: &Person{Firstname: "Kain", Lastname: "McGeever", Age: "42"}, Salary:         "9332"})
 	employees = append(employees, Employee{ID: "4", Person: &Person{Firstname: "Crawford", Lastname: "Van den Dael", Age: "34"}, Salary: "5322"})
 
 	// URL paths and handlers, some with additional parameter
